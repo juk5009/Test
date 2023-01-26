@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public class UserRepository {
+public interface UserRepository {
     public int insert(@Param("username") String username, @Param("password") String password,
             @Param("email") String email);
 
@@ -17,6 +17,7 @@ public class UserRepository {
     public int updateById(@Param("id") int id, @Param("password") String password);
 
     public int deleteById(int id);
-    // public int insert(String username, String password, String email);
 
+    // public int insert(String username, String password, String email);
+    public User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
 }

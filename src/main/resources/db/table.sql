@@ -6,8 +6,3 @@ create table user_tb(
     created_at Timestamp
 );
 
-create table board_tb(
-    id int auto_increment primary key,
-    userId int,
-    created_at Timestamp
-);

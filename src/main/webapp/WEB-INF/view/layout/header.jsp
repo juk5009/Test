@@ -8,11 +8,34 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title></title>
+            <Style>
+        .header {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contents {
+            display: flex;
+            justify-content: center;
+        }
+        .navi {
+            display: flex;
+            justify-content: center;
+        }
+        .padding {
+            padding : 5px;
+        }
+        
+            </Style>
         </head>
 
-        <body>
-            <h1>게시글 목록 페이지</h1>
-            <hr/>
+        
+            
                 
              
                

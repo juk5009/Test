@@ -20,14 +20,15 @@
                                 <th>제목</th>
                                 <th>작성일</th>
                             </tr>
-                            <c:forEach items="${boardList}" var="board">
-
+                            
+                                <c:forEach items="${boardList}" var="board">
                                 <tr>
                                     <td>${board.userid}</td>
                                     <td><a href="/board/${board.id}">${board.title}</a></td>
                                     <td>${board.createdAt}</td>
                                 </tr>
-                            </c:forEach>
+                           
+                                </c:forEach>
                         </table>
 
 

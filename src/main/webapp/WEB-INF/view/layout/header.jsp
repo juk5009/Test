@@ -9,34 +9,31 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title></title>
             <Style>
-        .header {
-            display: flex;
-            justify-content: center;
-        }
+                .header {
+                    background-color: gray;
+                    display: flex;
+                    justify-content: center;
+                }
 
-        .footer {
-            display: flex;
-            justify-content: center;
-        }
+                .footer {
+                    background-color: gray;
+                    display: flex;
+                    justify-content: center;
+                }
 
-        .contents {
-            display: flex;
-            justify-content: center;
-        }
-        .navi {
-            display: flex;
-            justify-content: center;
-        }
-        .padding {
-            padding : 5px;
-        }
-        
+                .contents {
+
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .navi {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .padding {
+                    padding: 5px;
+                }
             </Style>
         </head>
-
-        
-            
-                
-             
-               
-            

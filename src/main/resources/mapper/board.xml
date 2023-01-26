@@ -6,10 +6,10 @@
 <mapper namespace="shop.mtcoding.noerror.model.BoardRepository">
 
    
-   <select id="findAll" resultType="shop.mtcoding.noerror.model.Board">
-      select * from board_tb
+  
+   <select id="findByuserId" resultType="shop.mtcoding.noerror.model.Board">
+      select * from board_tb where userId = #{userId}
    </select>
-   
     
 
 </mapper>

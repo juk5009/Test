@@ -1,7 +1,5 @@
 package shop.mtcoding.noerror.controller;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,29 +24,13 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(String username, String password, String remember, HttpServletResponse response) {
+    public String login(String username, String password) {
         User user = userRepository.findByUsernameAndPassword(username, password);
         if (user == null) {
             return "redirect:/loginForm";
-        } else {
-            // 요청헤더: Cookie
-            // 응답헤더: Set-Cookie
-            if (remember == null) {
-                remember = "";
-            }
-
-            if (remember.equals("on")) {
-                Cookie cookie = new Cookie("remember", username);
-                response.addCookie(cookie);
-
-            } else {
-                Cookie cookie = new Cookie("remember", "");
-                cookie.setMaxAge(0); // 쿠키가 남아있는 시간 설정
-                response.addCookie(cookie);
-            }
         }
         session.setAttribute("principal", user);
-        return "redirect:/";
+        return "redirect:/board/list";
     }
 
     @GetMapping("/joinForm")
@@ -65,6 +47,22 @@ public class UserController {
             return "redirect:/joinForm";
         }
 
+    }
+
+    @GetMapping("/updateForm")
+    public String updateForm() {
+        return "user/updateForm";
+    }
+
+    @PostMapping("/update")
+    public String update(String username, String password, String email) {
+        User user = (User) session.getAttribute("principal");
+        int result = userRepository.update(user.getId(), username, password, email);
+        if (result == 1) {
+            return "redirect:/loginForm";
+        } else {
+            return "redirect:/updateForm";
+        }
     }
 
     @GetMapping("/logout")

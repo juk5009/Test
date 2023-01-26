@@ -11,20 +11,19 @@
                 <hr />
                 <%@ include file="../layout/navigator.jsp" %>
                     <div class="contents">
-                        <form action="/login" method="post">
+                        <form action="/join" method="post">
                             <table border="1">
-
                                 <tr>
                                     <th>유저네임</th>
-                                    <td><input type="text"></td>
+                                    <td><input type="text" name="username"></td>
                                 </tr>
                                 <tr>
                                     <th>패스워드</th>
-                                    <td><input type="password"></td>
+                                    <td><input type="password" name="password"></td>
                                 </tr>
                                 <tr>
                                     <th>이메일</th>
-                                    <td><input type="email"></td>
+                                    <td><input type="email" name="email"></td>
                                 </tr>
                             </table>
                             <button type="submit">회원가입완료</button>
